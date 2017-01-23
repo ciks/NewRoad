@@ -4,11 +4,7 @@ class CardList {
 
     }
     public SortList() {
-        this._data.sort(function (a: Card, b: Card): number {
-            var temp = a.GetValue() - b.GetValue();
-            if (temp == 0)
-                return a.GetColor() - b.GetColor();
-        });
+        this._data.sort(Card.Compare);
     }
     public RandomList() {
         var temp: Array<Card> = [];
@@ -18,6 +14,19 @@ class CardList {
             this._data.splice(n);
         }
         this._data=temp;
+    }
+    public Insert(value:number){
+        var temp=new Card(value);
+        var i:number=0;
+        for(var val in this._data){
+            if(Card.Compare(new Card(value),val)){
+
+            }
+        }
+        this._data
+    }
+    public Remove(){
+
     }
     
 }

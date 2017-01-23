@@ -9,16 +9,25 @@ class Card {
     public static Card_Mask_Color = 0xf0;
     public static Card_Mask_Value = 0x0f;
 
-    private _type: number;
+    private _data: number;
     private _view: CardView;
+
+    public constructor(date:number){
+        this._data=date;
+    }
     public GetType() {
-        return this._type;
+        return this._data;
     }
     public GetValue() {
-        return this._type & Card.Card_Mask_Value;
+        return this._data & Card.Card_Mask_Value;
     }
     public GetColor() {
-        return (this._type & Card.Card_Mask_Color) >> 4;
+        return (this._data & Card.Card_Mask_Color) >> 4;
+    }
+    public static Compare(a: Card, b: Card): number {
+        var temp = a.GetValue() - b.GetValue();
+        if (temp == 0)
+            return a.GetColor() - b.GetColor();
     }
 
 }
