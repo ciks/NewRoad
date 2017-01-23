@@ -17,16 +17,16 @@ class CardList {
     }
     public Insert(value:number){
         var temp=new Card(value);
-        var i:number=0;
-        for(var val in this._data){
-            if(Card.Compare(new Card(value),val)){
-
+        for(var i:number=0;i<this._data.length;++i){
+            if(Card.Compare(this._data[i],temp)){
+                this._data.splice(i-1,0,temp);
             }
         }
-        this._data
     }
-    public Remove(){
-
+    public Remove(value:number){
+        var temp=new Card(value);
+        var n=this._data.indexOf(temp);
+        return this._data.splice(n);
     }
     
 }
