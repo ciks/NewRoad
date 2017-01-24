@@ -29,8 +29,5 @@ class Card {
         if (temp == 0)
             return a.GetColor() - b.GetColor();
     }
-    public  GetColor(i:number){
-
-    }
 
 }

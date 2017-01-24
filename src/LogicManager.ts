@@ -1,5 +1,7 @@
 class LogicManager extends CiSingleton<LogicManager>{
-    private Init(){
-        
+    protected Init(){
+        SingleClient.GetInstance();
+        GameClient.GetInstance();
     }
+    
 }
