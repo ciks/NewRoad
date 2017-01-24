@@ -3,4 +3,10 @@ class CiSingleton<type>{
     public GetInstance():CiSingleton<type>{
         return CiSingleton._instatce;
     }
+    constructor(){
+        this.Init();
+    }
+    protected Init(){
+
+    }
 }
