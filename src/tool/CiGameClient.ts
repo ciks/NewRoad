@@ -1,12 +1,12 @@
 class CiGameClient extends CiSingleton<CiGameClient> {
-	public Init(){
-
+	protected Init(){
+		super.Init();
 	}
 	public Start(){
-
+		
 	}
 	public Run(){
-
+		
 	}
 	public Stop(){
 
